@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Involve";
+  src:
+    local("Involve"),
+    url("../fonts/Involve.woff2") format("woff2"),
+    url("../fonts/Involve.woff") format("woff"),
+    url("../fonts/Involve.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Evolventa";
+  src:
+    local("Evolventa"),
+    url("../fonts/Evolventa.woff2") format("woff2"),
+    url("../fonts/Evolventa.woff") format("woff"),
+    url("../fonts/Evolventa.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

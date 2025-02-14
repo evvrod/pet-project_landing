@@ -1,0 +1,25 @@
+// Цвета
+$color-primary: #ca0078;
+$color-secondary: #5a73ef;
+$color-tertiary: #81f3f8;
+
+$color-highlight: #f706a3;
+
+$color-background: #0c0d12;
+$color-alt-background: #1b1a2c;
+$color-surface: #161524;
+
+$color-text: #ffffff;
+$color-text-secondary: $color-highlight;
+
+// Шрифты
+$font-primary: "Involve", sans-serif;
+$font-secondary: "Evolventa", sans-serif;
+
+// Медиазапросы
+$breakpoint-sm: 320px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1920px;
+
+// Прочее
+$transition-time: 0.3s;

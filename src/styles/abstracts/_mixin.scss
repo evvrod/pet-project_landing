@@ -1,0 +1,41 @@
+@use "variables" as *;
+@use "sass:list" as list;
+@use "sass:map" as map;
+
+$fonts: (
+  hero: (
+    desktop: (500, 120px, $font-primary, 0.96px, 0.9),
+    mobile: (500, 52px, $font-primary, 0.96px, 0.9)
+  ),
+  heading: (
+    desktop: (500, 80px, $font-primary, 0.96px, 0.9),
+    mobile: (500, 36px, $font-primary, 0.96px, 0.9)
+  ),
+  subheading: (
+    desktop: (400, 44px, $font-primary, normal, 1.1),
+    mobile: (400, 30px, $font-primary, normal, 1.1)
+  ),
+  bodyl: (
+    desktop: (400, 24px, $font-secondary, normal, 1.1),
+    mobile: (400, 16px, $font-secondary, normal, 1.1)
+  ),
+  bodys: (
+    desktop: (400, 14px, $font-secondary, normal, 1.1),
+    mobile: (400, 12px, $font-secondary, normal, 1.1)
+  )
+);
+
+@mixin font($name) {
+  $desktop: map.get(map.get($fonts, $name), desktop);
+  $mobile: map.get(map.get($fonts, $name), mobile);
+
+  font-weight: list.nth($desktop, 1);
+  font-size: list.nth($desktop, 2);
+  font-family: list.nth($desktop, 3);
+  letter-spacing: list.nth($desktop, 4);
+  line-height: list.nth($desktop, 5);
+
+  @media (width < $breakpoint-md) {
+    font-size: list.nth($mobile, 2);
+  }
+}
