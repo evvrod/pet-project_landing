@@ -1,0 +1,25 @@
+@use "abstracts" as *;
+
+.link {
+  text-decoration: none;
+  color: $color-text;
+  opacity: 0.6;
+
+  transition: color $transition-time ease-in-out;
+
+  @include font(bodyl);
+
+  &:hover {
+    color: $color-highlight;
+  }
+
+  &:active {
+    color: $color-primary;
+  }
+
+  &:disabled {
+    color: $color-primary;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

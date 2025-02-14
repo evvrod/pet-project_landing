@@ -1,0 +1,28 @@
+@use "abstracts" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  z-index: 100;
+
+  &__img {
+    height: 42px;
+
+    @media (width<$breakpoint-md) {
+      height: 21px;
+      align-self: flex-start;
+    }
+  }
+
+  &__text {
+    color: $color-text;
+    @include font(subheading);
+  }
+
+  @media (width<$breakpoint-md) {
+    gap: 9px;
+  }
+}

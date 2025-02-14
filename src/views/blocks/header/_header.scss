@@ -1,0 +1,74 @@
+@use "abstracts" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+
+  z-index: 100;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+
+    @media ($breakpoint-md <= width<1400px) {
+      gap: clamp(10px, 8vw, 150px);
+    }
+
+    @media (width < $breakpoint-md) {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      height: calc(280px - 60px);
+      background: $color-background;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+
+      transform: translateY(calc(-100% - 60px));
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__nav.active {
+    transform: translateY(0);
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 105px;
+
+    @media ($breakpoint-md <= width < 1400px) {
+      gap: clamp(5px, 5vw, 105px);
+    }
+
+    @media (width < $breakpoint-md) {
+      gap: 36px;
+      flex-direction: column;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @media (width<$breakpoint-md) {
+      display: block;
+    }
+  }
+
+  @media (width<$breakpoint-md) {
+    height: 60px;
+  }
+}
+
+body:has(.header__nav.active) main {
+  filter: blur(18px);
+}

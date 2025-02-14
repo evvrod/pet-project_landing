@@ -1,0 +1,20 @@
+include ../button/button.pug
+include ../menu/menu.pug
+include ../logo/logo.pug
+
+header.header
+  +logo("AI", "/img/logo.svg")
+  .header__burger(onClick="toggleMenu()")
+    include ../burger/burger.pug
+  nav.header__nav
+    +menu("header__menu",[
+      { text: "Главная", href: "/" },
+      { text: "Преимущества", href: "#feature" }
+    ])
+    +button("primary", "Получить доступ")
+
+
+script.
+  function toggleMenu() {
+    document.querySelector(".header__nav").classList.toggle("active");
+  }

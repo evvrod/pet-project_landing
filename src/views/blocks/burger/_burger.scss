@@ -1,0 +1,57 @@
+@use "abstracts" as *;
+
+.burger {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 18px;
+  height: 13px;
+
+  z-index: 100;
+
+  cursor: pointer;
+
+  &__line {
+    height: 1px;
+    width: 18px;
+    background-color: $color-text;
+    transition: background-color $transition-time ease-in-out;
+  }
+
+  &__line--top {
+    transform-origin: top left;
+    transition: transform $transition-time ease-in-out;
+  }
+
+  &__line--middle {
+    transition: opacity $transition-time ease-in-out;
+  }
+
+  &__line--bottom {
+    transform-origin: bottom left;
+    transition: transform $transition-time ease-in-out;
+  }
+
+  &--active {
+    .burger__line--top {
+      width: 25px;
+      transform: translateY(-3px) rotate(45deg);
+    }
+
+    .burger__line--middle {
+      opacity: 0;
+    }
+
+    .burger__line--bottom {
+      width: 25px;
+      transform: translateY(3px) rotate(-45deg);
+    }
+  }
+
+  &:hover &__line {
+    background-color: $color-primary;
+  }
+}

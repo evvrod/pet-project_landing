@@ -1,0 +1,7 @@
+include ../link/link.pug
+
+mixin menu(className,items)
+  ul.menu(class=className)
+    each item in items
+      li.menu__item
+        +link(item.href, item.text)

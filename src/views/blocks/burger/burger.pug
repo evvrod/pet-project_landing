@@ -1,0 +1,18 @@
+.burger(onClick="toggleBurger()")
+  span.burger__line.burger__line--top
+  span.burger__line.burger__line--middle
+  span.burger__line.burger__line--bottom
+
+
+script.
+  let isActive = false;
+
+  function toggleBurger() {
+    isActive = !isActive;
+    const burger = document.querySelector('.burger');
+    if (isActive) {
+      burger.classList.add('burger--active');
+    } else {
+      burger.classList.remove('burger--active');
+    }
+  }

@@ -1,0 +1,2 @@
+mixin button(type, text, disabled=false, onclick='')
+  button(class=`button ${type ? `button--${type}` : ''}` disabled=disabled onclick=onclick) #{text}

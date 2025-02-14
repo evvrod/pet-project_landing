@@ -1,0 +1,5 @@
+// Подключаем стили блоков (по БЭМ)
+@use "../views/blocks/index";
+
+// Подклчаем стили layout
+@use "../views/layouts/main";
