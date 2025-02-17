@@ -9,7 +9,6 @@ import { styles } from "./gulp-task/styles.js";
 import { images } from "./gulp-task/images.js";
 import { fonts } from "./gulp-task/fonts.js";
 import { watch } from "./gulp-task/watch.js";
-import { compressGzip as gzip } from "./gulp-task/gzip.js";
 
 export const paths = {
   views: {
@@ -31,11 +30,7 @@ export const paths = {
     src: "./src/fonts/**/*.{woff,woff2,ttf}",
     dist: "./dist/fonts/",
     watch: "./src/fonts/**/*.{woff,woff2,ttf}",
-  },
-  gzip: {
-    src: "./src/.htaccess",
-    dist: "./dist/",
-  },
+  }
 };
 
 export const development = gulp.series(
@@ -46,7 +41,7 @@ export const development = gulp.series(
 
 export const prod = gulp.series(
   clean,
-  gulp.parallel(fonts, views, styles, images, gzip)
+  gulp.parallel(fonts, views, styles, images)
 );
 
 export default development;
