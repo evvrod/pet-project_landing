@@ -1,0 +1,10 @@
+include ../button/button.pug
+
+.banner
+  .banner__content
+    h1.banner__title Нейросеть
+    p.banner__subtitle может все!
+    p.banner__text Мы уже живем в этой удивительной реальности
+    +button("secondary", "Погрузиться в новый мир", false, "window.myDialog.showModal()")
+  .banner__img
+    img(src="/img/banner.svg", alt="Изображение искусственного интеллекта")
