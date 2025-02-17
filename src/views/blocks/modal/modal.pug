@@ -1,0 +1,14 @@
+include ../button/button.pug
+include ../input-email/input-email.pug
+
+dialog.modal#myDialog
+    button.modal__close(onclick="window.myDialog.close()")
+        span.modal__close-line
+        span.modal__close-line
+    .modal__text-block
+        p.modal__title Овладей нейросетями!
+        p.modal__description Получи в подарок доступ ко всем курсам
+    .img-container
+        img.modal__img(src='./img/popup.svg' alt='Подарки')
+    +inputEmail('Email:', 'email-input', '')
+    +button("secondary", "Получить доступ")

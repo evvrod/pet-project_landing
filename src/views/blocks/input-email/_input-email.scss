@@ -1,0 +1,70 @@
+@use "abstracts" as *;
+
+.input-email {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__field {
+    height: 62px;
+    width: 100%;
+    padding: 18px;
+
+    color: $color-text;
+    background-color: $color-alt-background;
+    border: 1px solid $color-alt-background;
+    border-radius: 18px;
+    outline: none;
+    text-align: center;
+
+    transition: border $transition-time ease-in-out;
+
+    @include font(bodyl);
+
+    @media (width < $breakpoint-md) {
+      border-radius: 9px;
+    }
+
+    &::placeholder {
+      font: inherit;
+      color: inherit;
+      opacity: 0.4;
+      transition: opacity $transition-time ease-in-out;
+    }
+
+    &:focus,
+    &:valid {
+      outline: none;
+      caret-color: $color-tertiary;
+      border: 1px solid $color-tertiary;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      outline: none;
+      border: 1px solid $color-highlight;
+    }
+
+    &:invalid:not(:placeholder-shown) + .input-email__error {
+      display: block;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 6px);
+    
+    color: $color-highlight;
+    margin-top: 6px;
+    display: none;
+
+    @include font(bodys);
+  }
+}
