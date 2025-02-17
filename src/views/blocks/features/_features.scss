@@ -1,0 +1,75 @@
+@use "abstracts" as *;
+
+.features {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 96px;
+  color: $color-text;
+
+  &::before {
+    content: "Преимущества";
+    position: absolute;
+    top: clamp(
+      -65px,
+      calc((-65 - 35) / (360 - 1430) * (100vw - 1430px) + 35px),
+      35px
+    );
+    left: 50%;
+    transform: translateX(-50%);
+
+    font: 500
+      clamp(
+        48px,
+        calc((213 - 48) / (1430 - 360) * (100vw - 360px) + 48px),
+        213px
+      )
+      $font-primary;
+    opacity: 0.1;
+    letter-spacing: 0.96px;
+
+    color: transparent;
+    -webkit-text-stroke: 1px $color-text;
+    white-space: nowrap;
+    z-index: -100;
+  }
+
+  &__text {
+    color: $color-text;
+    text-align: center;
+    max-width: 926px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+    @media (width<$breakpoint-md) {
+      gap: 12px;
+    }
+  }
+
+  &__title {
+    @include font(heading);
+  }
+
+  &__description {
+    @include font(bodyl);
+  }
+
+  &__description strong {
+    color: $color-highlight;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+
+    @media (width< $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

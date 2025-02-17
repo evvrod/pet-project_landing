@@ -1,0 +1,18 @@
+include ../button/button.pug
+include ../card/card.pug
+
+.features
+  .features__text
+    h2.features__title Преимущества курса
+    p.features__description Поможем создать <strong>корректный промт</strong>, чтобы вы получили максимально корректный вариант под ваши нужды!
+  .features__content
+    -
+      var features = [
+        { icon: "/img/Property 1=Goal.svg", title: "Хотите открыть бизнес?", description: "Нейросеть поможет составить бизнес-план, рассчитать расходы, нарисовать логотип, найти место получше и станет вашим главным деловым партнером" },
+        { icon: "/img/Property 1=Suitcase.svg", title: "Мечтаете об отпуске?", description: "Нейросеть поможет найти место по вашим запросам, выбрать наилучший сезон, собрать чемодан, подыскать где остановиться и сделать ваш отпуск незабываемым" },
+        { icon: "/img/Property 1=Check list.svg", title: "Вы студент и нуждаетесь в помощи в учебе?", description: "Нейросеть поможет составить бизнес-план, рассчитать расходы, нарисовать логотип, найти место получше и станет вашим главным деловым партнером" },
+        { icon: "/img/Property 1=Mental health.svg", title: "Вы студент и нуждаетесь в помощи в учебе?", description: "Нет проблем! Нейросеть — ваш лучший друг, который поможет написать курсовую, решить сложный тест и подготовиться к экзаменам" }
+      ]
+
+    each feature in features
+      +card(feature.icon, feature.title, feature.description)
